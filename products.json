@@ -1,0 +1,93 @@
+{
+  "org": "AlayaGear",
+  "title": "Alaya Lab Releases",
+  "products": [
+    {
+      "id": "gear-zero",
+      "name": "Gear Zero Desktop",
+      "repo": "AlayaGear/gear-zero-desktop-releases",
+      "tagline": "Create and share games",
+      "description": "The playful side of the Gear line, on your Mac: create games and share them with friends. When a game outgrows it, open the project in Cadre.",
+      "platforms": [
+        "macOS (Apple Silicon)"
+      ],
+      "update": "Updates itself in the app",
+      "signing": "Not notarized by Apple",
+      "assets": [
+        {
+          "pattern": "-arm64\\.dmg$",
+          "os": "mac",
+          "label": "macOS · Apple Silicon",
+          "format": "DMG installer",
+          "primary": true
+        },
+        {
+          "pattern": "-arm64\\.zip$",
+          "os": "mac",
+          "label": "macOS · Apple Silicon",
+          "format": "ZIP archive"
+        }
+      ],
+      "notesStrip": [
+        "\\n---\\n(由 Mac 自动打包|Built on a Mac from)[\\s\\S]*$"
+      ],
+      "boilerplate": [],
+      "skipTags": [],
+      "install": [
+        "Open the DMG and drag Gear Zero Desktop into Applications.",
+        "If macOS blocks the first launch: System Settings → Privacy & Security → Open Anyway.",
+        "After that, Gear Zero Desktop keeps itself up to date."
+      ]
+    },
+    {
+      "id": "gear-cadre",
+      "name": "Gear Cadre",
+      "repo": "AlayaGear/gear-cadre-releases",
+      "tagline": "The AI game studio for your desktop",
+      "description": "Describe a game, play it, and refine it by talking. Exports Godot projects.",
+      "platforms": [
+        "macOS (Apple Silicon)",
+        "Windows (x64)",
+        "Linux (x64)"
+      ],
+      "update": "Updates itself in the app (minisign-verified)",
+      "signing": "Not code-signed for Apple or Microsoft",
+      "assets": [
+        {
+          "pattern": "_aarch64\\.dmg$",
+          "os": "mac",
+          "label": "macOS · Apple Silicon",
+          "format": "DMG installer",
+          "primary": true
+        },
+        {
+          "pattern": "_x64-setup\\.exe$",
+          "os": "windows",
+          "label": "Windows · x64",
+          "format": "EXE installer",
+          "primary": true
+        },
+        {
+          "pattern": "_amd64\\.AppImage$",
+          "os": "linux",
+          "label": "Linux · x64",
+          "format": "AppImage",
+          "primary": true
+        }
+      ],
+      "notesStrip": [],
+      "boilerplate": [
+        "^\\s*CADRE [0-9.]+\\.? *(Unsigned by Apple/Microsoft;[^\\n]*)?\\s*$"
+      ],
+      "skipTags": [
+        "latest"
+      ],
+      "install": [
+        "macOS: open the DMG and drag Gear Cadre into Applications. If the first launch is blocked: System Settings → Privacy & Security → Open Anyway.",
+        "Windows: run the installer. When SmartScreen appears, click More info → Run anyway.",
+        "Linux: make the AppImage executable (chmod +x) and run it.",
+        "After that, Gear Cadre keeps itself up to date."
+      ]
+    }
+  ]
+}

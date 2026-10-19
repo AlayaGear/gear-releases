@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Alaya Lab Releases</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Download Gear Zero Desktop and Gear Cadre, and read what changed in every release.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geologica:wght,CRSV,SHRP@100..900,0..1,0..100&display=swap">
+<style>
+/* Alaya Lab design system (dark only, by design): tinted blue-slate neutrals, cyan primary,
+   orange used sparingly, Geologica with sharpened headings. Layout: nav bar, section header,
+   one product card per product, then a merged release-notes list with filter chips, footer. */
+:root {
+  color-scheme: dark;
+  --primary: #80eaff; --primary-off: #6eb6c1; --primary-fg: #131d20; --accent: #ff7a1c;
+  --bg: #131d20; --card: #202e31; --popover: #28393c; --tint-2: #32474b; --border: #667f85; --black: #091011;
+  --fg: #d4e2e5; --muted: #a5babe; --white: #eef5f5;
+  --ok: #3ecb8a; --warn: #e0a84a; --err: #ef6a5e;
+  --hover: color-mix(in srgb, var(--fg) 8%, transparent);
+  --divider: color-mix(in srgb, var(--fg) 8%, transparent);
+  --radius: 8px; --radius-sm: 6px; --radius-lg: 12px;
+  --ease: cubic-bezier(0.65, 0.05, 0, 1);
+  --skew: -10deg;
+  --sans: "Geologica", "Mona Sans", Arial, sans-serif;
+  --mono: ui-monospace, Menlo, monospace;
+  --edge: "SHRP" 60, "CRSV" 0;
+  --soft: "SHRP" 0, "CRSV" 0;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--fg);
+  font: 400 16.5px/1.6 var(--sans); font-variation-settings: var(--soft);
+}
+a { color: inherit; text-decoration: none; }
+code { font-family: var(--mono); font-size: .85em; }
+:focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; }
+::selection { background: color-mix(in srgb, var(--primary) 35%, transparent); }
+.container {
+  max-width: 1280px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+@media (min-width: 720px) { .container { padding-left: max(48px, env(safe-area-inset-left, 0px)); padding-right: max(48px, env(safe-area-inset-right, 0px)); } }
+
+/* nav */
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 60; background: var(--bg); }
+.nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50; background: color-mix(in srgb, var(--bg) 85%, transparent); backdrop-filter: blur(14px); border-bottom: 1px solid var(--divider); }
+.nav-in { display: flex; align-items: center; gap: 16px; height: 68px; }
+.brandmark { display: block; height: 20px; width: auto; aspect-ratio: 626 / 87; color: var(--fg); --logo-accent: var(--primary); overflow: visible; flex: none; }
+.nav-sep { width: 1px; height: 18px; background: var(--divider); }
+.nav-title { font-size: 14px; font-weight: 600; color: var(--muted); }
+.nav-links { display: flex; gap: 4px; margin-left: auto; }
+.nav-links a { padding: 8px 12px; border-radius: 6px; font-size: 14px; font-weight: 600; color: var(--muted); transition: color .2s, background .2s; }
+.nav-links a:hover { color: var(--fg); background: var(--hover); }
+
+/* section header */
+.sec { padding-block: 72px 0; }
+.sec-head { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 32px; align-items: end; margin-bottom: 40px; }
+.eyebrow { display: block; font: 600 .75rem/1 var(--sans); letter-spacing: .06em; text-transform: uppercase; color: var(--primary); margin-bottom: 14px; }
+.sec-head h1, .sec-head h2 { margin: 0; font: 600 clamp(2.2rem, 4.4vw, 3.5rem)/1.06 var(--sans); letter-spacing: -.025em; color: var(--white); font-variation-settings: var(--edge); text-wrap: balance; }
+.sec-head h2 { font-size: clamp(1.9rem, 3.4vw, 2.6rem); }
+.sec-head p { margin: 0; color: var(--muted); font-size: 17px; max-width: 32rem; justify-self: end; }
+.sync { display: block; margin-top: 8px; font: 400 12px/1.4 var(--mono); color: color-mix(in srgb, var(--muted) 80%, transparent); }
+
+/* slanted website buttons */
+.tb { --c: var(--primary); --t: var(--primary-fg); position: relative; isolation: isolate; display: inline-flex; align-items: center; gap: 10px; height: 52px; padding: 0 28px; border: 0; background: none; cursor: pointer; color: var(--t); font: 600 15px/1.25 var(--sans); max-width: 100%; }
+.tb::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--c); transform: skewX(var(--skew)); border-radius: 3px; transition: transform .45s var(--ease), background .2s; }
+.tb:hover::before { transform: skewX(0deg); }
+.tb:active::before { transform: skewX(var(--skew)) scale(.96); }
+.tb.sm { height: 40px; padding: 0 20px; font-size: 13px; }
+.tb.ghost { --t: var(--fg); }
+.tb.ghost::before { background: transparent; box-shadow: inset 0 0 0 1.5px var(--border); }
+.tb.ghost:hover::before { box-shadow: inset 0 0 0 1.5px var(--fg); }
+.tb svg { width: 16px; height: 16px; flex: none; }
+.tb .sz { font: 400 12px/1 var(--mono); opacity: .75; white-space: nowrap; }
+
+/* product cards */
+.prods { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap: 16px; }
+.prod { position: relative; overflow: hidden; padding: 28px; border-radius: 16px; background: var(--card); display: grid; grid-template-columns: minmax(0, 1fr); gap: 22px; align-content: start; min-width: 0; }
+.prod::after { content: ""; position: absolute; right: -40px; top: -40px; width: 180px; height: 180px; background: repeating-linear-gradient(90deg, color-mix(in srgb, var(--primary) 7%, transparent) 0 3px, transparent 3px 9px); transform: skewX(var(--skew)); pointer-events: none; }
+.prod-top { display: flex; gap: 6px; flex-wrap: wrap; position: relative; z-index: 1; }
+.pill { font: 700 11px/1 var(--sans); padding: 6px 9px; border-radius: 999px; box-shadow: inset 0 0 0 1px currentColor; color: var(--muted); }
+.pill.ok { background: var(--primary); color: var(--primary-fg); box-shadow: none; }
+.prod-name { margin: 0; font: 600 clamp(28px, 2.4vw, 36px)/1.08 var(--sans); letter-spacing: -.025em; color: var(--white); font-variation-settings: var(--edge); }
+.prod-tag { margin: 6px 0 0; color: var(--primary); font-weight: 600; font-size: 15px; }
+.prod-desc { margin: 10px 0 0; color: var(--muted); font-size: 15px; max-width: 34rem; }
+.current { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; }
+.ver { font: 600 30px/1 var(--sans); letter-spacing: -.02em; color: var(--white); font-variation-settings: var(--edge); font-variant-numeric: tabular-nums; }
+.when { color: var(--muted); font-size: 14px; }
+.dls { display: flex; flex-wrap: wrap; gap: 12px 16px; align-items: center; padding-left: 6px; }
+.dl-note { margin: 0; font-size: 13px; color: var(--muted); }
+.facts { display: grid; grid-template-columns: max-content 1fr; gap: 6px 18px; margin: 0; padding-top: 18px; border-top: 1px solid var(--divider); font-size: 14px; }
+.facts dt { font: 600 11px/1.9 var(--sans); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.facts dd { margin: 0; }
+details.install summary { cursor: pointer; font-weight: 600; font-size: 14px; color: var(--fg); list-style: none; display: inline-flex; align-items: center; gap: 6px; }
+details.install summary::-webkit-details-marker { display: none; }
+details.install summary svg { width: 14px; height: 14px; transition: transform .25s var(--ease); }
+details.install[open] summary svg { transform: rotate(180deg); }
+details.install ol { margin: 10px 0 0; padding-left: 1.3em; font-size: 14px; color: var(--muted); display: grid; gap: 4px; }
+.prod-links { display: flex; flex-wrap: wrap; gap: 20px; align-items: center; }
+.link { font: 600 14px/1 var(--sans); color: var(--primary); display: inline-flex; gap: 6px; align-items: center; }
+.link svg { width: 14px; height: 14px; transition: transform .3s var(--ease); }
+.link:hover svg { transform: translateX(3px); }
+
+/* release notes */
+.log-tools { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 8px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chips button { border: 0; cursor: pointer; padding: 7px 12px; border-radius: 999px; font: 600 13px/1.2 var(--sans); background: transparent; color: var(--muted); box-shadow: inset 0 0 0 1px var(--tint-2); transition: all .2s; display: inline-flex; gap: 6px; align-items: center; }
+.chips button:hover { color: var(--fg); background: var(--hover); }
+.chips button[aria-pressed="true"] { background: var(--primary); color: var(--primary-fg); box-shadow: none; }
+.chips button span { font-weight: 400; opacity: .75; font-variant-numeric: tabular-nums; }
+.entries { display: grid; }
+.entry { display: grid; grid-template-columns: 11rem 1fr; gap: 6px 32px; padding-block: 28px; border-bottom: 1px solid var(--divider); }
+.entry .meta { display: grid; gap: 6px; align-content: start; font-size: 13px; color: var(--muted); }
+.entry .prod-label { font: 600 .75rem/1 var(--sans); letter-spacing: .06em; text-transform: uppercase; color: var(--primary); }
+.entry .date { font-variant-numeric: tabular-nums; }
+.entry .body { min-width: 0; display: grid; gap: 10px; }
+.entry h3 { margin: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font: 600 22px/1.2 var(--sans); letter-spacing: -.02em; color: var(--white); font-variation-settings: var(--edge); }
+.entry h3 a:hover { color: var(--primary); }
+.badge { font: 700 10px/1 var(--sans); text-transform: uppercase; letter-spacing: .04em; padding: 4px 6px; border-radius: 999px; background: color-mix(in srgb, var(--primary) 18%, transparent); color: var(--primary); }
+.badge.pre { background: color-mix(in srgb, var(--accent) 18%, transparent); color: var(--accent); }
+.notes { max-width: 70ch; overflow-wrap: anywhere; font-size: 15px; }
+.notes > :first-child { margin-top: 0; }
+.notes > :last-child { margin-bottom: 0; }
+.notes h4 { font: 600 15px/1.4 var(--sans); color: var(--white); margin: 16px 0 6px; }
+.notes p { margin: 8px 0; }
+.notes ul { margin: 6px 0; padding-left: 1.2em; display: grid; gap: 5px; }
+.notes li::marker { color: var(--primary-off); }
+.notes strong { color: var(--white); font-weight: 600; }
+.notes code { background: var(--popover); padding: 1px 5px; border-radius: 4px; }
+.notes a { color: var(--primary); }
+.notes.clamped { max-height: 14em; overflow: hidden; -webkit-mask-image: linear-gradient(#000 65%, transparent); mask-image: linear-gradient(#000 65%, transparent); }
+.more { justify-self: start; background: none; border: 0; padding: 0; color: var(--primary); font: 600 13px var(--sans); cursor: pointer; }
+.quiet { color: var(--muted); font-size: 14px; margin: 0; }
+.files { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13px; }
+.files a { color: var(--muted); border-bottom: 1px solid var(--tint-2); }
+.files a:hover { color: var(--fg); border-color: var(--fg); }
+.error { padding: 16px 20px; border-radius: var(--radius-lg); background: color-mix(in srgb, var(--err) 14%, var(--card)); color: var(--fg); }
+
+/* footer */
+footer { margin-top: 96px; background: var(--black); padding-block: 48px 32px; font-size: 14px; }
+.foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px; align-items: start; }
+.foot p { color: var(--muted); max-width: 26rem; margin: 14px 0 0; }
+.foot nav { display: grid; gap: 6px; }
+.foot nav a { color: var(--fg); opacity: .8; } .foot nav a:hover { opacity: 1; color: var(--primary); }
+.foot h4 { margin: 0 0 6px; font: 600 11px/1 var(--sans); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.foot-bottom { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--divider); color: var(--muted); font-size: 12px; }
+
+@media (max-width: 760px) {
+  .prod { padding: 22px 20px; }
+  .tb { height: auto; min-height: 52px; padding: 10px 22px; }
+  .tb.sm { min-height: 40px; padding: 8px 18px; }
+  .sec-head { grid-template-columns: 1fr; }
+  .sec-head p { justify-self: start; }
+  .entry { grid-template-columns: 1fr; }
+  .entry .meta { grid-auto-flow: column; justify-content: start; gap: 12px; align-items: baseline; }
+  .nav-links { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before { transition: none !important; } }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><symbol id="alaya-logo" viewBox="0 0 626 87"><path d="M71.3136 42.2188H31.8925C30.6041 42.2188 29.7561 43.5624 30.3106 44.7254L48.186 82.2188M48.186 82.2188H91.1509C92.4965 82.2188 93.3401 80.7651 92.6725 79.5968L49.978 4.8815C49.3053 3.70416 47.6077 3.70416 46.9349 4.8815L4.24044 79.5968C3.57284 80.7651 4.41642 82.2188 5.76201 82.2188H48.186Z" fill="none" stroke="currentColor" stroke-width="8" stroke-miterlimit="10" stroke-linecap="round"/><path d="M454.082 76.275C453.448 76.275 452.911 76.0526 452.469 75.6046C452.033 75.1779 451.796 74.5897 451.805 73.9771V11.5247C451.805 10.8878 452.027 10.3453 452.469 9.8973C452.893 9.45843 453.475 9.21767 454.082 9.22681H462.898C463.529 9.22681 464.069 9.44929 464.511 9.8973C464.952 10.3453 465.175 10.8878 465.175 11.5247V64.8768H495.231C495.926 64.8768 496.496 65.0993 496.938 65.5473C497.379 65.9953 497.602 66.5683 497.602 67.2723V73.9771C497.602 74.6141 497.379 75.1566 496.938 75.6046C496.496 76.0526 495.926 76.275 495.231 76.275H454.082ZM502.728 76.275C502.222 76.275 501.75 76.083 501.308 75.699C500.927 75.3181 500.738 74.8396 500.738 74.2636C500.738 74.0076 500.802 73.7211 500.927 73.4011L523.778 11.6223C523.964 10.9884 524.327 10.4245 524.82 9.99482C525.39 9.48282 526.149 9.22681 527.097 9.22681H537.432C538.379 9.22681 539.105 9.48282 539.611 9.99482C540.117 10.4398 540.498 10.9823 540.751 11.6223L563.599 73.4011C563.663 73.7211 563.696 74.0076 563.696 74.2636C563.696 74.8396 563.504 75.3181 563.126 75.699C562.745 76.083 562.303 76.275 561.798 76.275H553.551C552.664 76.275 552.002 76.083 551.557 75.699C551.18 75.2541 550.927 74.8396 550.799 74.4556L546.343 62.7709H518.183L513.727 74.4556C513.602 74.8396 513.316 75.2541 512.874 75.699C512.496 76.083 511.862 76.275 510.978 76.275H502.728ZM521.502 51.7537H543.024L532.217 22.158L521.502 51.7537ZM574.823 76.275C574.189 76.275 573.653 76.0526 573.211 75.6046C572.775 75.1779 572.534 74.5897 572.547 73.9771V11.6223C572.547 10.9183 572.766 10.3453 573.211 9.8973C573.632 9.45843 574.217 9.21767 574.823 9.22681H602.319C607.439 9.22681 611.611 10.0253 614.833 11.6223C618.057 13.1552 620.428 15.2947 621.946 18.0406C623.525 20.7835 624.314 23.9774 624.314 27.6163C624.314 30.0453 623.872 32.1817 622.988 34.0347C622.165 35.8236 621.123 37.2926 619.858 38.4416C618.658 39.5905 617.457 40.4835 616.256 41.1235C618.721 42.2724 620.901 44.1864 622.799 46.8683C624.695 49.5502 625.643 52.7442 625.643 56.4471C625.643 60.2779 624.789 63.6944 623.083 66.6963C621.376 69.6982 618.846 72.0601 615.497 73.7851C612.148 75.4461 608.006 76.275 603.078 76.275H574.823ZM585.725 66.1233H601.56C604.974 66.1233 607.564 65.1968 609.335 63.3439C611.105 61.43 611.989 59.129 611.989 56.4471C611.989 53.6371 611.072 51.3087 609.24 49.4557C607.47 47.6028 604.91 46.6793 601.56 46.6793H585.725V66.1233ZM585.725 36.7166H600.612C603.962 36.7166 606.458 35.9181 608.103 34.3211C609.81 32.6632 610.664 30.5238 610.664 27.9058C610.664 25.2239 609.81 23.1485 608.103 21.6795C606.458 20.1465 603.962 19.3816 600.612 19.3816H585.725V36.7166Z" fill="var(--logo-accent, currentColor)"/><path d="M124.779 76.275C124.273 76.275 123.801 76.083 123.359 75.699C122.978 75.3181 122.789 74.8396 122.789 74.2636C122.789 74.0076 122.853 73.7211 122.978 73.4011L145.829 11.6223C146.015 10.9884 146.378 10.4245 146.872 9.99482C147.441 9.48282 148.2 9.22681 149.148 9.22681H159.483C160.431 9.22681 161.159 9.48282 161.662 9.99482C162.168 10.4398 162.549 10.9823 162.802 11.6223L185.653 73.4011C185.714 73.7211 185.747 74.0076 185.747 74.2636C185.747 74.8396 185.555 75.3181 185.177 75.699C184.8 76.083 184.355 76.275 183.849 76.275H175.602C174.715 76.275 174.054 76.083 173.609 75.699C173.231 75.2541 172.978 74.8396 172.853 74.4556L168.394 62.7709H140.234L135.778 74.4556C135.653 74.8396 135.367 75.2541 134.925 75.699C134.547 76.083 133.913 76.275 133.029 76.275H124.779ZM143.553 51.7537H165.075L154.268 22.158L143.553 51.7537ZM196.874 76.275C196.24 76.275 195.704 76.0526 195.262 75.6046C194.826 75.1779 194.589 74.5866 194.598 73.9771V11.5247C194.598 10.8878 194.82 10.3453 195.262 9.8973C195.686 9.45843 196.268 9.21767 196.874 9.22681H205.691C206.322 9.22681 206.861 9.44929 207.303 9.8973C207.745 10.3453 207.968 10.8878 207.968 11.5247V64.8768H238.024C238.718 64.8768 239.288 65.0993 239.73 65.5473C240.172 65.9953 240.395 66.5683 240.395 67.2723V73.9771C240.395 74.6141 240.172 75.1566 239.73 75.6046C239.288 76.0526 238.718 76.275 238.024 76.275H196.874ZM245.521 76.275C245.015 76.275 244.543 76.083 244.101 75.699C243.72 75.3181 243.531 74.8396 243.531 74.2636C243.531 74.0076 243.595 73.7211 243.72 73.4011L266.571 11.6223C266.757 10.9884 267.119 10.4245 267.613 9.99482C268.183 9.48282 268.942 9.22681 269.89 9.22681H280.224C281.172 9.22681 281.898 9.48282 282.403 9.99482C282.909 10.4398 283.29 10.9823 283.543 11.6223L306.391 73.4011C306.455 73.7211 306.486 74.0076 306.486 74.2636C306.486 74.8396 306.297 75.3181 305.919 75.699C305.538 76.083 305.096 76.275 304.59 76.275H296.343C295.457 76.275 294.792 76.083 294.35 75.699C293.972 75.2541 293.719 74.8396 293.591 74.4556L289.136 62.7709H260.975L256.52 74.4556C256.395 74.8396 256.108 75.2541 255.666 75.699C255.289 76.083 254.655 76.275 253.771 76.275H245.521ZM264.294 51.7537H285.817L275.01 22.158L264.294 51.7537ZM327.838 76.275C327.207 76.275 326.671 76.0526 326.226 75.6046C325.793 75.1779 325.552 74.5897 325.564 73.9771V52.3297L303.185 12.2927C303.112 12.1373 303.048 11.9758 302.996 11.8143C302.935 11.6284 302.902 11.4333 302.902 11.2383C302.902 10.6653 303.091 10.1838 303.472 9.80282C303.85 9.41882 304.292 9.22681 304.798 9.22681H313.236C313.995 9.22681 314.596 9.41882 315.038 9.80282C315.544 10.1838 315.891 10.6013 316.083 11.0463L332.199 38.92L348.223 11.0463C348.498 10.5739 348.851 10.1533 349.266 9.80282C349.772 9.41882 350.406 9.22681 351.164 9.22681H359.506C360.076 9.22681 360.551 9.41882 360.929 9.80282C361.307 10.1838 361.499 10.6653 361.499 11.2383C361.499 11.4303 361.465 11.6223 361.405 11.8143C361.408 11.991 361.341 12.1647 361.213 12.2927L338.837 52.3297V73.9771C338.837 74.6141 338.617 75.1566 338.172 75.6046C337.73 76.0526 337.164 76.275 336.466 76.275H327.838ZM359.78 76.275C359.277 76.275 358.802 76.083 358.36 75.699C357.979 75.3181 357.79 74.8396 357.79 74.2636C357.79 74.0076 357.854 73.7211 357.979 73.4011L380.83 11.6223C381.016 10.9884 381.379 10.4245 381.873 9.99482C382.442 9.48282 383.201 9.22681 384.149 9.22681H394.484C395.432 9.22681 396.16 9.48282 396.666 9.99482C397.172 10.4398 397.55 10.9823 397.803 11.6223L420.654 73.4011C420.715 73.7211 420.748 74.0076 420.748 74.2636C420.748 74.8396 420.559 75.3181 420.178 75.699C419.801 76.083 419.356 76.275 418.853 76.275H410.603C409.719 76.275 409.055 76.083 408.613 75.699C408.232 75.2541 407.979 74.8396 407.854 74.4556L403.395 62.7709H375.238L370.779 74.4556C370.654 74.8396 370.368 75.2541 369.926 75.699C369.548 76.083 368.914 76.275 368.03 76.275H359.78ZM378.554 51.7537H400.079L389.269 22.158L378.554 51.7537Z" fill="currentColor"/></symbol>
+<symbol id="i-down" viewBox="0 0 24 24"><path d="M12 4v12m0 0-5-5m5 5 5-5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m0 0-6-6m6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</defs></svg>
+
+<header class="nav">
+  <div class="container nav-in">
+    <a href="#top" aria-label="Alaya Lab releases"><svg class="brandmark" role="img" aria-label="Alaya Lab"><use href="#alaya-logo"/></svg></a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <span class="nav-title">Releases</span>
+    <nav class="nav-links" id="nav-links" aria-label="Products"></nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="sec container">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">Downloads</span>
+        <h1>Get the Gear apps</h1>
+      </div>
+      <p>The latest installer for every Alaya Lab desktop app, and what changed in each release. Once installed, each app keeps itself up to date.<span class="sync" id="sync"></span></p>
+    </div>
+    <div class="prods" id="products"></div>
+  </section>
+
+  <section class="sec container" aria-labelledby="log-title">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">Changelog</span>
+        <h2 id="log-title">Release notes</h2>
+      </div>
+      <p>Every release of every app, newest first.</p>
+    </div>
+    <div class="log-tools">
+      <div class="chips" id="filters" role="group" aria-label="Filter by product"></div>
+    </div>
+    <div class="entries" id="timeline"></div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="foot">
+      <div>
+        <svg class="brandmark" role="img" aria-label="Alaya Lab"><use href="#alaya-logo"/></svg>
+        <p>Alaya Lab makes AI tools for game creators.</p>
+      </div>
+      <nav id="foot-links" aria-label="Release repositories"><h4>On GitHub</h4></nav>
+    </div>
+    <div class="foot-bottom">© 2026 Alaya Lab</div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var DATA_URL = 'data/releases.json';
+  var $ = function (id) { return document.getElementById(id); };
+  var esc = function (s) { return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
+  var icon = function (id) { return '<svg aria-hidden="true"><use href="#' + id + '"/></svg>'; };
+
+  function detectOS() {
+    var ua = navigator.userAgent.toLowerCase();
+    if (/android|iphone|ipad/.test(ua)) return null;
+    var p = ((navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || ua).toLowerCase();
+    if (p.indexOf('mac') >= 0) return 'mac';
+    if (p.indexOf('win') >= 0) return 'windows';
+    if (p.indexOf('linux') >= 0) return 'linux';
+    return null;
+  }
+  var myOS = detectOS();
+  var OS_NAME = { mac: 'macOS', windows: 'Windows', linux: 'Linux' };
+
+  function mb(bytes) { return Math.round(bytes / 1048576) + ' MB'; }
+  function ymd(iso) { return new Date(iso).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }); }
+  function ago(iso) {
+    var s = (Date.now() - new Date(iso).getTime()) / 1000;
+    var rtf = new Intl.RelativeTimeFormat('en', { numeric: 'auto' });
+    if (s < 3600) return rtf.format(-Math.max(1, Math.round(s / 60)), 'minute');
+    if (s < 86400) return rtf.format(-Math.round(s / 3600), 'hour');
+    if (s < 86400 * 45) return rtf.format(-Math.round(s / 86400), 'day');
+    return rtf.format(-Math.round(s / 86400 / 30), 'month');
+  }
+
+  // Small Markdown subset used by release notes: headings, bullet lists, paragraphs, rules, **bold**, `code`, [links](url).
+  function inline(s) {
+    return esc(s)
+      .replace(/`([^`]+)`/g, '<code>$1</code>')
+      .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+      .replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+  }
+  function markdown(src) {
+    var out = [], para = [], items = null;
+    function flushPara() { if (para.length) { out.push('<p>' + inline(para.join(' ')) + '</p>'); para = []; } }
+    function flushList() { if (items) { out.push('<ul>' + items.map(function (i) { return '<li>' + inline(i) + '</li>'; }).join('') + '</ul>'); items = null; } }
+    src.split('\n').forEach(function (line) {
+      var m;
+      if (!line.trim()) { flushPara(); return; }
+      if (/^\s*---+\s*$/.test(line)) { flushPara(); flushList(); return; }
+      if ((m = line.match(/^#{1,6}\s+(.*)$/))) { flushPara(); flushList(); out.push('<h4>' + inline(m[1]) + '</h4>'); return; }
+      if ((m = line.match(/^\s*[-*]\s+(.*)$/))) { flushPara(); (items = items || []).push(m[1]); return; }
+      if (items && /^\s{2,}\S/.test(line)) { items[items.length - 1] += ' ' + line.trim(); return; }
+      flushList(); para.push(line.trim());
+    });
+    flushPara(); flushList();
+    return out.join('');
+  }
+
+  // One primary (slanted, filled) button per card: the installer for this computer, or the first one.
+  function downloads(assets) {
+    var primary = assets.filter(function (a) { return a.primary; });
+    var rest = assets.filter(function (a) { return !a.primary; });
+    primary.sort(function (a, b) { return (b.os === myOS) - (a.os === myOS); });
+    var lead = primary[0];
+    return primary.concat(rest).map(function (a) {
+      var main = a === lead;
+      return '<a class="tb' + (main ? '' : ' ghost sm') + '" href="' + esc(a.url) + '" title="' + esc(a.format + ' · ' + a.name) + '">' +
+        icon('i-down') + esc(main ? 'Download for ' + a.label : a.label + ' · ' + a.format) +
+        '<span class="sz">' + mb(a.size) + '</span></a>';
+    }).join('');
+  }
+
+  function renderProducts(products) {
+    $('products').innerHTML = products.map(function (p) {
+      var latest = p.releases.find(function (r) { return r.assets.length; });
+      var noMatch = myOS && latest && !latest.assets.some(function (a) { return a.os === myOS; });
+      return '<article class="prod" id="' + esc(p.id) + '">' +
+        '<div class="prod-top">' + (latest ? '<span class="pill ok">v' + esc(latest.version) + '</span>' : '') +
+          p.platforms.map(function (x) { return '<span class="pill">' + esc(x) + '</span>'; }).join('') + '</div>' +
+        '<div><h3 class="prod-name">' + esc(p.name) + '</h3><p class="prod-tag">' + esc(p.tagline) + '</p>' +
+          '<p class="prod-desc">' + esc(p.description) + '</p></div>' +
+        (latest ? '<div class="current"><span class="ver">v' + esc(latest.version) + '</span>' +
+          '<span class="when">Released ' + ymd(latest.publishedAt) + ' · ' + ago(latest.publishedAt) + '</span></div>' +
+          '<div class="dls">' + downloads(latest.assets) + '</div>' +
+          (noMatch ? '<p class="dl-note">No ' + esc(OS_NAME[myOS]) + ' build yet.</p>' : '')
+          : '<p class="dl-note">No installers have been published yet.</p>') +
+        '<dl class="facts"><dt>Updates</dt><dd>' + esc(p.update) + '</dd><dt>Signing</dt><dd>' + esc(p.signing) + '</dd>' +
+          '<dt>Releases</dt><dd>' + p.releases.length + '</dd></dl>' +
+        '<details class="install"><summary>How to install ' + icon('i-chev') + '</summary><ol>' +
+          p.install.map(function (s) { return '<li>' + esc(s) + '</li>'; }).join('') + '</ol></details>' +
+        '<div class="prod-links"><a class="link" href="#' + esc(p.id) + '-notes" data-filter="' + esc(p.id) + '">Release notes ' + icon('i-arrow') + '</a>' +
+          '<a class="link" href="https://github.com/' + esc(p.repo) + '/releases" target="_blank" rel="noopener">All releases on GitHub ' + icon('i-arrow') + '</a></div>' +
+        '</article>';
+    }).join('');
+    $('nav-links').innerHTML = products.map(function (p) { return '<a href="#' + esc(p.id) + '">' + esc(p.name) + '</a>'; }).join('');
+    $('foot-links').insertAdjacentHTML('beforeend', products.map(function (p) {
+      return '<a href="https://github.com/' + esc(p.repo) + '/releases" target="_blank" rel="noopener">' + esc(p.name) + '</a>'; }).join(''));
+  }
+
+  var state = { filter: 'all', products: [] };
+  var known = function (id) { return id === 'all' || state.products.some(function (p) { return p.id === id; }); };
+
+  function renderFilters() {
+    var total = state.products.reduce(function (n, p) { return n + p.releases.length; }, 0);
+    var opts = [{ id: 'all', name: 'All', n: total }].concat(state.products.map(function (p) { return { id: p.id, name: p.name, n: p.releases.length }; }));
+    $('filters').innerHTML = opts.map(function (o) {
+      return '<button type="button" data-id="' + esc(o.id) + '" aria-pressed="' + (state.filter === o.id) + '">' + esc(o.name) + ' <span>' + o.n + '</span></button>';
+    }).join('');
+  }
+
+  function renderTimeline() {
+    var entries = [];
+    state.products.forEach(function (p) {
+      var latestTag = (p.releases.find(function (r) { return r.assets.length; }) || {}).tag;
+      p.releases.forEach(function (r) { entries.push({ p: p, r: r, latest: r.tag === latestTag }); });
+    });
+    entries = entries.filter(function (e) { return state.filter === 'all' || e.p.id === state.filter; })
+      .sort(function (a, b) { return new Date(b.r.publishedAt) - new Date(a.r.publishedAt); });
+    $('timeline').innerHTML = entries.map(function (e) {
+      var r = e.r;
+      return '<article class="entry">' +
+        '<div class="meta"><span class="prod-label">' + esc(e.p.name) + '</span><span class="date">' + ymd(r.publishedAt) + '</span></div>' +
+        '<div class="body"><h3><a href="' + esc(r.url) + '" target="_blank" rel="noopener">v' + esc(r.version) + '</a>' +
+        (e.latest ? '<span class="badge">Latest</span>' : '') + (r.prerelease ? '<span class="badge pre">Pre-release</span>' : '') + '</h3>' +
+        (r.notes ? '<div class="notes">' + markdown(r.notes) + '</div>' :
+          '<p class="quiet">' + (r.assets.length ? 'No release notes for this version.' : 'This release has no installers.') + '</p>') +
+        (r.assets.length && !e.latest ? '<div class="files">' + r.assets.filter(function (a) { return a.primary; }).map(function (a) {
+          return '<a href="' + esc(a.url) + '">' + esc(a.label) + '</a>'; }).join('') + '</div>' : '') +
+        '</div></article>';
+    }).join('');
+    // Collapse long notes behind a toggle once they have laid out.
+    Array.prototype.forEach.call(document.querySelectorAll('.notes'), function (n) {
+      if (n.scrollHeight <= 280) return;
+      n.classList.add('clamped');
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'more'; b.textContent = 'Show all';
+      b.addEventListener('click', function () { var c = n.classList.toggle('clamped'); b.textContent = c ? 'Show all' : 'Show less'; });
+      n.after(b);
+    });
+  }
+
+  function setFilter(id, scroll) {
+    state.filter = known(id) ? id : 'all';
+    renderFilters(); renderTimeline();
+    if (scroll) $('log-title').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+  $('filters').addEventListener('click', function (ev) {
+    var b = ev.target.closest('button'); if (b) setFilter(b.dataset.id);
+  });
+  $('products').addEventListener('click', function (ev) {
+    var a = ev.target.closest('[data-filter]'); if (!a) return;
+    ev.preventDefault(); setFilter(a.dataset.filter, true);
+  });
+
+  function render(data) {
+    state.products = data.products;
+    $('sync').textContent = 'Synced ' + ymd(data.generatedAt) + ', ' + new Date(data.generatedAt).toTimeString().slice(0, 5);
+    renderProducts(data.products);
+    var h = location.hash.slice(1).replace(/-notes$/, '');
+    setFilter(known(h) ? h : 'all');
+  }
+
+  if (window.__RELEASES__) render(window.__RELEASES__);
+  else fetch(DATA_URL, { cache: 'no-cache' }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }).then(render)
+    .catch(function () { $('products').innerHTML = '<p class="error">Release data could not be loaded. Refresh to try again, or download from the product’s Releases page on GitHub.</p>'; });
+})();
+</script>
+</body>
+</html>

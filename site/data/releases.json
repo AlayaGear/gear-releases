@@ -1,0 +1,1075 @@
+{
+  "title": "Alaya Lab Releases",
+  "org": "AlayaGear",
+  "generatedAt": "2026-10-19T06:31:22.007Z",
+  "products": [
+    {
+      "id": "gear-zero",
+      "name": "Gear Zero Desktop",
+      "repo": "AlayaGear/gear-zero-desktop-releases",
+      "tagline": "Create and share games",
+      "description": "The playful side of the Gear line, on your Mac: create games and share them with friends. When a game outgrows it, open the project in Cadre.",
+      "platforms": [
+        "macOS (Apple Silicon)"
+      ],
+      "update": "Updates itself in the app",
+      "signing": "Not notarized by Apple",
+      "install": [
+        "Open the DMG and drag Gear Zero Desktop into Applications.",
+        "If macOS blocks the first launch: System Settings → Privacy & Security → Open Anyway.",
+        "After that, Gear Zero Desktop keeps itself up to date."
+      ],
+      "releases": [
+        {
+          "tag": "v0.1.10",
+          "version": "0.1.10",
+          "publishedAt": "2026-10-17T05:38:06Z",
+          "prerelease": false,
+          "url": "https://github.com/AlayaGear/gear-zero-desktop-releases/releases/tag/v0.1.10",
+          "notes": "## What's new\n\n- Opening a build shows a panel that compares the build's result with its key frames side by side\n- The asset list shows the progress of builds that are running\n- New: choose how hard the model thinks\n- Objects no longer sit separately in files; they all appear in the asset list\n- A new game's first version appears on the node of the build that made it, instead of as a separate starting point\n- A build's flow is named as soon as a chat hands work to it\n- Fixed: imported character models face forward correctly, whichever way the model file points\n- Fixed: pressing Done during a director build no longer starts new work",
+          "assets": [
+            {
+              "name": "Gear-Zero-0.1.10-arm64.dmg",
+              "os": "mac",
+              "label": "macOS · Apple Silicon",
+              "format": "DMG installer",
+              "primary": true,
+              "size": 150133283,
+              "url": "https://github.com/AlayaGear/gear-zero-desktop-releases/releases/download/v0.1.10/Gear-Zero-0.1.10-arm64.dmg"
+            },
+            {
+              "name": "Gear-Zero-0.1.10-arm64.zip",
+              "os": "mac",
+              "label": "macOS · Apple Silicon",
+              "format": "ZIP archive",
+              "primary": false,
+              "size": 151771254,
+              "url": "https://github.com/AlayaGear/gear-zero-desktop-releases/releases/download/v0.1.10/Gear-Zero-0.1.10-arm64.zip"
+            }
+          ]
+        },
+        {
+          "tag": "v0.1.9",
+          "version": "0.1.9",
+          "publishedAt": "2026-10-17T01:36:52Z",
+          "prerelease": false,
+          "url": "https://github.com/AlayaGear/gear-zero-desktop-releases/releases/tag/v0.1.9",
+          "notes": "## What's new\n\n- Use your own video as a build target, with key frames taken at the seconds you choose; a video added on the home page goes to the game the idea becomes, and the idea's chat can see it too\n- Videos in the input box show as cards, and as small tags once sent\n- New: a free motion library that works offline with any character model; the toolbox has a free \"Motion library\" card for adding built-in motions to game characters\n- Motion lists take character motions from the app's library first; standard builds list the motions and judge a run of frames for each one; 2D animation can pick objects from the list or use the game's own motions\n- Lists: objects in a 3D game that share one image are marked \"shared image\", and each shows only its own part of it; objects in key frames are listed too, play key frames are judged on what actually plays, and drawing takes from the library first\n- Gear Zero now updates itself from the public downloads page; updating Codex or Claude Code replaces the desktop app's copy, and failures are explained in the interface language\n- Coin amounts use Gear Zero's own format, with a new coin badge; Extra High on the model button shows as xhigh\n- Fixed: in macOS full screen, no gap is left for the traffic-light buttons beside the sidebar toggle; a video on the home page row is no longer lost after you type in it",
+          "assets": [
+            {
+              "name": "Gear-Zero-0.1.9-arm64.dmg",
+              "os": "mac",
+              "label": "macOS · Apple Silicon",
+              "format": "DMG installer",
+              "primary": true,
+              "size": 150137403,
+              "url": "https://github.com/AlayaGear/gear-zero-desktop-releases/releases/download/v0.1.9/Gear-Zero-0.1.9-arm64.dmg"
+            },
+            {
+              "name": "Gear-Zero-0.1.9-arm64.zip",
+              "os": "mac",
+              "label": "macOS · Apple Silicon",
+              "format": "ZIP archive",
+              "primary": false,
+              "size": 151762602,
+              "url": "https://github.com/AlayaGear/gear-zero-desktop-releases/releases/download/v0.1.9/Gear-Zero-0.1.9-arm64.zip"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gear-cadre",
+      "name": "Gear Cadre",
+      "repo": "AlayaGear/gear-cadre-releases",
+      "tagline": "The AI game studio for your desktop",
+      "description": "Describe a game, play it, and refine it by talking. Exports Godot projects.",
+      "platforms": [
+        "macOS (Apple Silicon)",
+        "Windows (x64)",
+        "Linux (x64)"
+      ],
+      "update": "Updates itself in the app (minisign-verified)",
+      "signing": "Not code-signed for Apple or Microsoft",
+      "install": [
+        "macOS: open the DMG and drag Gear Cadre into Applications. If the first launch is blocked: System Settings → Privacy & Security → Open Anyway.",
+        "Windows: run the installer. When SmartScreen appears, click More info → Run anyway.",
+        "Linux: make the AppImage executable (chmod +x) and run it.",
+        "After that, Gear Cadre keeps itself up to date."
+      ],
+      "releases": [
+        {
+          "tag": "v0.2.22",
+          "version": "0.2.22",
+          "publishedAt": "2026-10-15T07:27:35Z",
+          "prerelease": false,
+          "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/tag/v0.2.22",
+          "notes": "Fixes for typing into conversations the app found on disk, and for an engine that would not stop.\nNo new minimum version.\n\nFixed:\n\n- **Typing into a mirrored conversation showed nothing.** After you typed into a Claude or Codex\n  session the app was only mirroring, neither your message nor the reply appeared, though the\n  agent had run the turn. They now appear (#1281).\n- **A conversation whose folder was deleted could not be continued**, most often one that ran in\n  a git worktree that has since been removed. It now resumes in the nearest folder that remains\n  (for a removed worktree, its repository), and the chat says where it now runs. Where no\n  suitable folder remains, the error names the missing folder instead of a bare \"No such file or\n  directory\" (#1283, #1286).\n- **Quitting the app could leave the engine running** whenever a Claude or Codex chat was live:\n  it logged \"shutting down\" and never exited, leaving its lock file behind. It now stops in about\n  a second (#1284, #1286).\n- Your own messages are labelled **You** rather than a generated `gui-xxxxxx` name (#1285).\n- Models are grouped by what the vendor's CLI says they run, each alias shows what it runs, and\n  the effort pill sits to the right of the model, in the chat only (#1271, #1272, #1277).\n\nChanged:\n\n- **Remote workspaces are an experiment, off by default.** Joining a server, workspaces, relay\n  accounts and machine sharing are hidden in the desktop app until you switch on\n  **Settings › Experiments › Remote workspaces**. Nothing signs you out; the browser build is\n  unaffected (#1276).\n- The model menu is taken entirely from each vendor's CLI, one row per model with its 1M-context\n  switch in the menu; **Default** is named on the effort pill and every level is described (#1274,\n  #1278, #1280).\n- A finished group of tool calls collapses (#1279). A CLI update lists the processes it will close\n  as rows and shows its live output on one line per process.",
+          "assets": [
+            {
+              "name": "Gear.Cadre_0.2.22_aarch64.dmg",
+              "os": "mac",
+              "label": "macOS · Apple Silicon",
+              "format": "DMG installer",
+              "primary": true,
+              "size": 52277774,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.2.22/Gear.Cadre_0.2.22_aarch64.dmg"
+            },
+            {
+              "name": "Gear.Cadre_0.2.22_amd64.AppImage",
+              "os": "linux",
+              "label": "Linux · x64",
+              "format": "AppImage",
+              "primary": true,
+              "size": 133151224,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.2.22/Gear.Cadre_0.2.22_amd64.AppImage"
+            },
+            {
+              "name": "Gear.Cadre_0.2.22_x64-setup.exe",
+              "os": "windows",
+              "label": "Windows · x64",
+              "format": "EXE installer",
+              "primary": true,
+              "size": 38665681,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.2.22/Gear.Cadre_0.2.22_x64-setup.exe"
+            }
+          ]
+        },
+        {
+          "tag": "v0.2.21",
+          "version": "0.2.21",
+          "publishedAt": "2026-10-14T08:57:43Z",
+          "prerelease": false,
+          "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/tag/v0.2.21",
+          "notes": "",
+          "assets": [
+            {
+              "name": "Gear.Cadre_0.2.21_aarch64.dmg",
+              "os": "mac",
+              "label": "macOS · Apple Silicon",
+              "format": "DMG installer",
+              "primary": true,
+              "size": 52246382,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.2.21/Gear.Cadre_0.2.21_aarch64.dmg"
+            },
+            {
+              "name": "Gear.Cadre_0.2.21_amd64.AppImage",
+              "os": "linux",
+              "label": "Linux · x64",
+              "format": "AppImage",
+              "primary": true,
+              "size": 133138936,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.2.21/Gear.Cadre_0.2.21_amd64.AppImage"
+            },
+            {
+              "name": "Gear.Cadre_0.2.21_x64-setup.exe",
+              "os": "windows",
+              "label": "Windows · x64",
+              "format": "EXE installer",
+              "primary": true,
+              "size": 38639352,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.2.21/Gear.Cadre_0.2.21_x64-setup.exe"
+            }
+          ]
+        },
+        {
+          "tag": "v0.2.20",
+          "version": "0.2.20",
+          "publishedAt": "2026-10-13T05:54:14Z",
+          "prerelease": false,
+          "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/tag/v0.2.20",
+          "notes": "",
+          "assets": [
+            {
+              "name": "Gear.Cadre_0.2.20_aarch64.dmg",
+              "os": "mac",
+              "label": "macOS · Apple Silicon",
+              "format": "DMG installer",
+              "primary": true,
+              "size": 51060958,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.2.20/Gear.Cadre_0.2.20_aarch64.dmg"
+            },
+            {
+              "name": "Gear.Cadre_0.2.20_amd64.AppImage",
+              "os": "linux",
+              "label": "Linux · x64",
+              "format": "AppImage",
+              "primary": true,
+              "size": 131754488,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.2.20/Gear.Cadre_0.2.20_amd64.AppImage"
+            },
+            {
+              "name": "Gear.Cadre_0.2.20_x64-setup.exe",
+              "os": "windows",
+              "label": "Windows · x64",
+              "format": "EXE installer",
+              "primary": true,
+              "size": 37607954,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.2.20/Gear.Cadre_0.2.20_x64-setup.exe"
+            }
+          ]
+        },
+        {
+          "tag": "v0.2.19",
+          "version": "0.2.19",
+          "publishedAt": "2026-10-12T13:10:14Z",
+          "prerelease": false,
+          "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/tag/v0.2.19",
+          "notes": "",
+          "assets": [
+            {
+              "name": "Gear.Cadre_0.2.19_aarch64.dmg",
+              "os": "mac",
+              "label": "macOS · Apple Silicon",
+              "format": "DMG installer",
+              "primary": true,
+              "size": 51007538,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.2.19/Gear.Cadre_0.2.19_aarch64.dmg"
+            },
+            {
+              "name": "Gear.Cadre_0.2.19_amd64.AppImage",
+              "os": "linux",
+              "label": "Linux · x64",
+              "format": "AppImage",
+              "primary": true,
+              "size": 130824696,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.2.19/Gear.Cadre_0.2.19_amd64.AppImage"
+            },
+            {
+              "name": "Gear.Cadre_0.2.19_x64-setup.exe",
+              "os": "windows",
+              "label": "Windows · x64",
+              "format": "EXE installer",
+              "primary": true,
+              "size": 37589856,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.2.19/Gear.Cadre_0.2.19_x64-setup.exe"
+            }
+          ]
+        },
+        {
+          "tag": "v0.2.18",
+          "version": "0.2.18",
+          "publishedAt": "2026-09-26T06:34:13Z",
+          "prerelease": false,
+          "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/tag/v0.2.18",
+          "notes": "**Contains security hardening for device keys, key sharing and archives. Update.** 0.2.18 is the new\nminimum version for the hosted relay: older desktop builds are asked to update at sign-in.\n\n- **Device-key proof.** When the app or the `cadre` CLI registers a device key with an account, it\n  now proves that it holds that key. A relay can require the proof: see \"Self-hosted relays\" below.\n- **Key sharing.** Stronger device-certificate checks and account-root pinning before a machine\n  shares session keys. The app and the CLI pin each machine's key the first time they see it, and\n  refuse and report a later change of key. Who may write key grants is narrower.\n- **Archives.** Archive session keys are sealed only to recovery keys the machine trusts.\n- **Machine sharing.** A daemon that has been connected for a while keeps refreshing who a machine\n  is shared with, so revoking a share and the key pins above keep taking effect. A session started\n  in an over-broad folder, such as a disk root or the home folder, gets no write root.\n\nFeatures:\n\n- desktop: a local workspace starts empty, with a start page to create a project or \"Import all\n  local sessions\".\n- desktop: sessions started in a git worktree are grouped under their repository, and a local\n  project can take more folders with \"Add folder…\".\n- desktop: a consistency pass across the UI: better focus rings and target sizes, long text that\n  wraps instead of overflowing, dialogs and popovers that stay on screen, settings that read and\n  behave alike, and progress and failures announced to screen readers.\n\nRelay-side changes are in the source too, and apply to a relay once it is rebuilt from this\nrelease's source and redeployed. They include stateless sign-in challenges, reclaiming an address\nfrom an unconfirmed sign-up, and a public mode that runs without email verification when no mail\nserver is configured.\n\n**Self-hosted relays.** The `v0.2.18` source still reports `minClientVersion` 0.2.17: the floor\nmoved to 0.2.18 on `main` right after this release. Once your relay is rebuilt from a tree whose\n`GET /version` reports 0.2.18, and your users are on 0.2.18, you can set\n`CADRE_API_REQUIRE_KEY_PROOF=true` to refuse device keys registered without proof. Older desktop\nbuilds are then asked to update at sign-in. An older `cadre` CLI fails `cadre login` with `key proof\nrequired`, and the fix is to update it. See \"Device-key proof\" in the source repository's\n`deploy/README.md`.\n\nEvery build is unsigned by Apple and Microsoft: follow the Gatekeeper / SmartScreen steps in the\nsource repository's `docs/install.md`.",
+          "assets": [
+            {
+              "name": "Gear.Cadre_0.2.18_aarch64.dmg",
+              "os": "mac",
+              "label": "macOS · Apple Silicon",
+              "format": "DMG installer",
+              "primary": true,
+              "size": 49397437,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.2.18/Gear.Cadre_0.2.18_aarch64.dmg"
+            },
+            {
+              "name": "Gear.Cadre_0.2.18_amd64.AppImage",
+              "os": "linux",
+              "label": "Linux · x64",
+              "format": "AppImage",
+              "primary": true,
+              "size": 128338424,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.2.18/Gear.Cadre_0.2.18_amd64.AppImage"
+            },
+            {
+              "name": "Gear.Cadre_0.2.18_x64-setup.exe",
+              "os": "windows",
+              "label": "Windows · x64",
+              "format": "EXE installer",
+              "primary": true,
+              "size": 35674099,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.2.18/Gear.Cadre_0.2.18_x64-setup.exe"
+            }
+          ]
+        },
+        {
+          "tag": "v0.2.17",
+          "version": "0.2.17",
+          "publishedAt": "2026-09-25T08:22:59Z",
+          "prerelease": false,
+          "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/tag/v0.2.17",
+          "notes": "**Contains security fixes for machine sharing and the local daemon socket. Update**, especially if\nyou share a machine with other people.\n\n- **Machine sharing.** The daemon now enforces each person's share role on everything that arrives\n  over the relay: who may start and resume agents, which launch settings are the owner's alone, and\n  which folders people you share with may browse. Share collaborator only with people you would\n  let run commands on the machine.\n- **Local daemon socket.** Session traffic is sent only to connections that have authenticated,\n  and the socket enforces an authentication deadline and bounds what it buffers.\n- **Projects.** Adding the root of a disk, the home folder or a top-level system folder as a\n  project is refused.\n\nRelay-side security fixes are in the source too: revoking a device now revokes its tokens and\ndisconnects it, and the relay tightens how it routes session traffic. They apply to a relay once\nit is rebuilt from this release's source and redeployed.\n\nAlso in this build:\n\n- cli: `cadre uninstall`, offered by the Windows uninstaller too; `cadre spawn` ends when the\n  daemon closes its socket.\n- desktop: copy diagnostics from Settings and the error boundary; delete your account from the app;\n  failures that only reached the console are shown; unfinished surfaces are hidden for the alpha.\n- security: export the recovery key; older account backups are pruned; state-directory hardening\n  is bounded and the kit file is saved owner-only.\n- adapter: a version probe the OS refuses as \"text file busy\" is retried.",
+          "assets": [
+            {
+              "name": "Gear.Cadre_0.2.17_aarch64.dmg",
+              "os": "mac",
+              "label": "macOS · Apple Silicon",
+              "format": "DMG installer",
+              "primary": true,
+              "size": 49261010,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.2.17/Gear.Cadre_0.2.17_aarch64.dmg"
+            },
+            {
+              "name": "Gear.Cadre_0.2.17_amd64.AppImage",
+              "os": "linux",
+              "label": "Linux · x64",
+              "format": "AppImage",
+              "primary": true,
+              "size": 128207352,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.2.17/Gear.Cadre_0.2.17_amd64.AppImage"
+            },
+            {
+              "name": "Gear.Cadre_0.2.17_x64-setup.exe",
+              "os": "windows",
+              "label": "Windows · x64",
+              "format": "EXE installer",
+              "primary": true,
+              "size": 35562605,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.2.17/Gear.Cadre_0.2.17_x64-setup.exe"
+            }
+          ]
+        },
+        {
+          "tag": "v0.2.16",
+          "version": "0.2.16",
+          "publishedAt": "2026-09-24T21:18:23Z",
+          "prerelease": false,
+          "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/tag/v0.2.16",
+          "notes": "CADRE 0.2.16\n\n**This release contains a security fix for the local daemon socket. Please update.**\n\nThe local daemon now requires the token it writes to `daemon.lock` from every client, and refuses connections from web origins it does not recognise. The desktop app, the `cadre` CLI and the Godot bridge present the token automatically; nothing needs configuring.\n\n**If you cannot update yet:** a daemon you drive only from the `cadre` CLI can be protected by starting it with `CADRE_REQUIRE_TOKEN=1`. Desktop app builds before 0.2.16 cannot present the token and would be locked out of their own daemon, so for desktop users the mitigation is to update.\n\n**Behaviour change:** `CADRE_REQUIRE_TOKEN=0` now turns the token requirement *off*. It exists for clients that cannot read `daemon.lock`, is logged on every start, and makes the socket reachable again by other local users on the machine. Connect to `ws://127.0.0.1:<port>`; `localhost` and `[::1]` are not handed the token.\n\nAlso in this build: a crash in the CLI prints a report instead of a bare panic; choose how each provider's executable is found; chat UI polish; custom game covers in Gear Zero Sync.\n\nUnsigned by Apple/Microsoft: follow the Gatekeeper / SmartScreen steps in the source repository's `docs/install.md`. Source commit: `7f36cdaf`.",
+          "assets": [
+            {
+              "name": "Gear.Cadre_0.2.16_aarch64.dmg",
+              "os": "mac",
+              "label": "macOS · Apple Silicon",
+              "format": "DMG installer",
+              "primary": true,
+              "size": 49059375,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.2.16/Gear.Cadre_0.2.16_aarch64.dmg"
+            },
+            {
+              "name": "Gear.Cadre_0.2.16_amd64.AppImage",
+              "os": "linux",
+              "label": "Linux · x64",
+              "format": "AppImage",
+              "primary": true,
+              "size": 128027128,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.2.16/Gear.Cadre_0.2.16_amd64.AppImage"
+            },
+            {
+              "name": "Gear.Cadre_0.2.16_x64-setup.exe",
+              "os": "windows",
+              "label": "Windows · x64",
+              "format": "EXE installer",
+              "primary": true,
+              "size": 35442330,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.2.16/Gear.Cadre_0.2.16_x64-setup.exe"
+            }
+          ]
+        },
+        {
+          "tag": "v0.2.15",
+          "version": "0.2.15",
+          "publishedAt": "2026-09-18T15:48:00Z",
+          "prerelease": false,
+          "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/tag/v0.2.15",
+          "notes": "",
+          "assets": [
+            {
+              "name": "Gear.Cadre_0.2.15_aarch64.dmg",
+              "os": "mac",
+              "label": "macOS · Apple Silicon",
+              "format": "DMG installer",
+              "primary": true,
+              "size": 48974005,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.2.15/Gear.Cadre_0.2.15_aarch64.dmg"
+            },
+            {
+              "name": "Gear.Cadre_0.2.15_amd64.AppImage",
+              "os": "linux",
+              "label": "Linux · x64",
+              "format": "AppImage",
+              "primary": true,
+              "size": 127347192,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.2.15/Gear.Cadre_0.2.15_amd64.AppImage"
+            },
+            {
+              "name": "Gear.Cadre_0.2.15_x64-setup.exe",
+              "os": "windows",
+              "label": "Windows · x64",
+              "format": "EXE installer",
+              "primary": true,
+              "size": 35379719,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.2.15/Gear.Cadre_0.2.15_x64-setup.exe"
+            }
+          ]
+        },
+        {
+          "tag": "v0.2.13",
+          "version": "0.2.13",
+          "publishedAt": "2026-09-10T04:54:55Z",
+          "prerelease": false,
+          "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/tag/v0.2.13",
+          "notes": "",
+          "assets": [
+            {
+              "name": "Gear.Cadre_0.2.13_aarch64.dmg",
+              "os": "mac",
+              "label": "macOS · Apple Silicon",
+              "format": "DMG installer",
+              "primary": true,
+              "size": 44463643,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.2.13/Gear.Cadre_0.2.13_aarch64.dmg"
+            },
+            {
+              "name": "Gear.Cadre_0.2.13_amd64.AppImage",
+              "os": "linux",
+              "label": "Linux · x64",
+              "format": "AppImage",
+              "primary": true,
+              "size": 126323192,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.2.13/Gear.Cadre_0.2.13_amd64.AppImage"
+            },
+            {
+              "name": "Gear.Cadre_0.2.13_x64-setup.exe",
+              "os": "windows",
+              "label": "Windows · x64",
+              "format": "EXE installer",
+              "primary": true,
+              "size": 34392352,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.2.13/Gear.Cadre_0.2.13_x64-setup.exe"
+            }
+          ]
+        },
+        {
+          "tag": "v0.2.12",
+          "version": "0.2.12",
+          "publishedAt": "2026-09-09T17:01:48Z",
+          "prerelease": false,
+          "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/tag/v0.2.12",
+          "notes": "",
+          "assets": [
+            {
+              "name": "Gear.Cadre_0.2.12_aarch64.dmg",
+              "os": "mac",
+              "label": "macOS · Apple Silicon",
+              "format": "DMG installer",
+              "primary": true,
+              "size": 44403568,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.2.12/Gear.Cadre_0.2.12_aarch64.dmg"
+            },
+            {
+              "name": "Gear.Cadre_0.2.12_amd64.AppImage",
+              "os": "linux",
+              "label": "Linux · x64",
+              "format": "AppImage",
+              "primary": true,
+              "size": 126265848,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.2.12/Gear.Cadre_0.2.12_amd64.AppImage"
+            },
+            {
+              "name": "Gear.Cadre_0.2.12_x64-setup.exe",
+              "os": "windows",
+              "label": "Windows · x64",
+              "format": "EXE installer",
+              "primary": true,
+              "size": 34345176,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.2.12/Gear.Cadre_0.2.12_x64-setup.exe"
+            }
+          ]
+        },
+        {
+          "tag": "v0.2.11",
+          "version": "0.2.11",
+          "publishedAt": "2026-09-09T07:03:51Z",
+          "prerelease": false,
+          "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/tag/v0.2.11",
+          "notes": "",
+          "assets": [
+            {
+              "name": "Gear.Cadre_0.2.11_aarch64.dmg",
+              "os": "mac",
+              "label": "macOS · Apple Silicon",
+              "format": "DMG installer",
+              "primary": true,
+              "size": 44238158,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.2.11/Gear.Cadre_0.2.11_aarch64.dmg"
+            },
+            {
+              "name": "Gear.Cadre_0.2.11_amd64.AppImage",
+              "os": "linux",
+              "label": "Linux · x64",
+              "format": "AppImage",
+              "primary": true,
+              "size": 126085624,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.2.11/Gear.Cadre_0.2.11_amd64.AppImage"
+            },
+            {
+              "name": "Gear.Cadre_0.2.11_x64-setup.exe",
+              "os": "windows",
+              "label": "Windows · x64",
+              "format": "EXE installer",
+              "primary": true,
+              "size": 34209594,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.2.11/Gear.Cadre_0.2.11_x64-setup.exe"
+            }
+          ]
+        },
+        {
+          "tag": "v0.2.10",
+          "version": "0.2.10",
+          "publishedAt": "2026-09-05T14:11:31Z",
+          "prerelease": false,
+          "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/tag/v0.2.10",
+          "notes": "",
+          "assets": [
+            {
+              "name": "Gear.Cadre_0.2.10_aarch64.dmg",
+              "os": "mac",
+              "label": "macOS · Apple Silicon",
+              "format": "DMG installer",
+              "primary": true,
+              "size": 39526567,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.2.10/Gear.Cadre_0.2.10_aarch64.dmg"
+            },
+            {
+              "name": "Gear.Cadre_0.2.10_amd64.AppImage",
+              "os": "linux",
+              "label": "Linux · x64",
+              "format": "AppImage",
+              "primary": true,
+              "size": 122616312,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.2.10/Gear.Cadre_0.2.10_amd64.AppImage"
+            },
+            {
+              "name": "Gear.Cadre_0.2.10_x64-setup.exe",
+              "os": "windows",
+              "label": "Windows · x64",
+              "format": "EXE installer",
+              "primary": true,
+              "size": 31724800,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.2.10/Gear.Cadre_0.2.10_x64-setup.exe"
+            }
+          ]
+        },
+        {
+          "tag": "v0.2.9",
+          "version": "0.2.9",
+          "publishedAt": "2026-09-05T06:23:32Z",
+          "prerelease": false,
+          "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/tag/v0.2.9",
+          "notes": "",
+          "assets": [
+            {
+              "name": "Gear.Cadre_0.2.9_aarch64.dmg",
+              "os": "mac",
+              "label": "macOS · Apple Silicon",
+              "format": "DMG installer",
+              "primary": true,
+              "size": 39449227,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.2.9/Gear.Cadre_0.2.9_aarch64.dmg"
+            },
+            {
+              "name": "Gear.Cadre_0.2.9_amd64.AppImage",
+              "os": "linux",
+              "label": "Linux · x64",
+              "format": "AppImage",
+              "primary": true,
+              "size": 122542584,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.2.9/Gear.Cadre_0.2.9_amd64.AppImage"
+            },
+            {
+              "name": "Gear.Cadre_0.2.9_x64-setup.exe",
+              "os": "windows",
+              "label": "Windows · x64",
+              "format": "EXE installer",
+              "primary": true,
+              "size": 31673083,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.2.9/Gear.Cadre_0.2.9_x64-setup.exe"
+            }
+          ]
+        },
+        {
+          "tag": "v0.2.8",
+          "version": "0.2.8",
+          "publishedAt": "2026-09-04T21:52:56Z",
+          "prerelease": false,
+          "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/tag/v0.2.8",
+          "notes": "",
+          "assets": [
+            {
+              "name": "Gear.Cadre_0.2.8_aarch64.dmg",
+              "os": "mac",
+              "label": "macOS · Apple Silicon",
+              "format": "DMG installer",
+              "primary": true,
+              "size": 33462233,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.2.8/Gear.Cadre_0.2.8_aarch64.dmg"
+            },
+            {
+              "name": "Gear.Cadre_0.2.8_amd64.AppImage",
+              "os": "linux",
+              "label": "Linux · x64",
+              "format": "AppImage",
+              "primary": true,
+              "size": 116607480,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.2.8/Gear.Cadre_0.2.8_amd64.AppImage"
+            },
+            {
+              "name": "Gear.Cadre_0.2.8_x64-setup.exe",
+              "os": "windows",
+              "label": "Windows · x64",
+              "format": "EXE installer",
+              "primary": true,
+              "size": 25687790,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.2.8/Gear.Cadre_0.2.8_x64-setup.exe"
+            }
+          ]
+        },
+        {
+          "tag": "v0.2.7",
+          "version": "0.2.7",
+          "publishedAt": "2026-09-02T15:49:03Z",
+          "prerelease": false,
+          "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/tag/v0.2.7",
+          "notes": "",
+          "assets": [
+            {
+              "name": "Gear.Cadre_0.2.7_aarch64.dmg",
+              "os": "mac",
+              "label": "macOS · Apple Silicon",
+              "format": "DMG installer",
+              "primary": true,
+              "size": 18857612,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.2.7/Gear.Cadre_0.2.7_aarch64.dmg"
+            },
+            {
+              "name": "Gear.Cadre_0.2.7_amd64.AppImage",
+              "os": "linux",
+              "label": "Linux · x64",
+              "format": "AppImage",
+              "primary": true,
+              "size": 95545848,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.2.7/Gear.Cadre_0.2.7_amd64.AppImage"
+            },
+            {
+              "name": "Gear.Cadre_0.2.7_x64-setup.exe",
+              "os": "windows",
+              "label": "Windows · x64",
+              "format": "EXE installer",
+              "primary": true,
+              "size": 14602263,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.2.7/Gear.Cadre_0.2.7_x64-setup.exe"
+            }
+          ]
+        },
+        {
+          "tag": "v0.2.5",
+          "version": "0.2.5",
+          "publishedAt": "2026-09-02T15:11:28Z",
+          "prerelease": false,
+          "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/tag/v0.2.5",
+          "notes": "",
+          "assets": [
+            {
+              "name": "Gear.Cadre_0.2.5_aarch64.dmg",
+              "os": "mac",
+              "label": "macOS · Apple Silicon",
+              "format": "DMG installer",
+              "primary": true,
+              "size": 18864530,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.2.5/Gear.Cadre_0.2.5_aarch64.dmg"
+            },
+            {
+              "name": "Gear.Cadre_0.2.5_amd64.AppImage",
+              "os": "linux",
+              "label": "Linux · x64",
+              "format": "AppImage",
+              "primary": true,
+              "size": 95541752,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.2.5/Gear.Cadre_0.2.5_amd64.AppImage"
+            },
+            {
+              "name": "Gear.Cadre_0.2.5_x64-setup.exe",
+              "os": "windows",
+              "label": "Windows · x64",
+              "format": "EXE installer",
+              "primary": true,
+              "size": 14605151,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.2.5/Gear.Cadre_0.2.5_x64-setup.exe"
+            }
+          ]
+        },
+        {
+          "tag": "v0.2.4",
+          "version": "0.2.4",
+          "publishedAt": "2026-09-02T14:57:56Z",
+          "prerelease": false,
+          "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/tag/v0.2.4",
+          "notes": "",
+          "assets": []
+        },
+        {
+          "tag": "v0.2.3",
+          "version": "0.2.3",
+          "publishedAt": "2026-09-02T14:42:58Z",
+          "prerelease": false,
+          "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/tag/v0.2.3",
+          "notes": "",
+          "assets": [
+            {
+              "name": "Gear.Cadre_0.2.3_aarch64.dmg",
+              "os": "mac",
+              "label": "macOS · Apple Silicon",
+              "format": "DMG installer",
+              "primary": true,
+              "size": 18865782,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.2.3/Gear.Cadre_0.2.3_aarch64.dmg"
+            },
+            {
+              "name": "Gear.Cadre_0.2.3_amd64.AppImage",
+              "os": "linux",
+              "label": "Linux · x64",
+              "format": "AppImage",
+              "primary": true,
+              "size": 95549944,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.2.3/Gear.Cadre_0.2.3_amd64.AppImage"
+            },
+            {
+              "name": "Gear.Cadre_0.2.3_x64-setup.exe",
+              "os": "windows",
+              "label": "Windows · x64",
+              "format": "EXE installer",
+              "primary": true,
+              "size": 14594973,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.2.3/Gear.Cadre_0.2.3_x64-setup.exe"
+            }
+          ]
+        },
+        {
+          "tag": "v0.2.2",
+          "version": "0.2.2",
+          "publishedAt": "2026-09-02T14:18:02Z",
+          "prerelease": false,
+          "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/tag/v0.2.2",
+          "notes": "",
+          "assets": [
+            {
+              "name": "Gear.Cadre_0.2.2_aarch64.dmg",
+              "os": "mac",
+              "label": "macOS · Apple Silicon",
+              "format": "DMG installer",
+              "primary": true,
+              "size": 18863336,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.2.2/Gear.Cadre_0.2.2_aarch64.dmg"
+            },
+            {
+              "name": "Gear.Cadre_0.2.2_amd64.AppImage",
+              "os": "linux",
+              "label": "Linux · x64",
+              "format": "AppImage",
+              "primary": true,
+              "size": 95533560,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.2.2/Gear.Cadre_0.2.2_amd64.AppImage"
+            },
+            {
+              "name": "Gear.Cadre_0.2.2_x64-setup.exe",
+              "os": "windows",
+              "label": "Windows · x64",
+              "format": "EXE installer",
+              "primary": true,
+              "size": 14601054,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.2.2/Gear.Cadre_0.2.2_x64-setup.exe"
+            }
+          ]
+        },
+        {
+          "tag": "v0.2.1",
+          "version": "0.2.1",
+          "publishedAt": "2026-09-02T13:45:04Z",
+          "prerelease": false,
+          "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/tag/v0.2.1",
+          "notes": "",
+          "assets": [
+            {
+              "name": "Gear.Cadre_0.2.1_aarch64.dmg",
+              "os": "mac",
+              "label": "macOS · Apple Silicon",
+              "format": "DMG installer",
+              "primary": true,
+              "size": 18853164,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.2.1/Gear.Cadre_0.2.1_aarch64.dmg"
+            },
+            {
+              "name": "Gear.Cadre_0.2.1_amd64.AppImage",
+              "os": "linux",
+              "label": "Linux · x64",
+              "format": "AppImage",
+              "primary": true,
+              "size": 95541752,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.2.1/Gear.Cadre_0.2.1_amd64.AppImage"
+            },
+            {
+              "name": "Gear.Cadre_0.2.1_x64-setup.exe",
+              "os": "windows",
+              "label": "Windows · x64",
+              "format": "EXE installer",
+              "primary": true,
+              "size": 14598322,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.2.1/Gear.Cadre_0.2.1_x64-setup.exe"
+            }
+          ]
+        },
+        {
+          "tag": "v0.1.20",
+          "version": "0.1.20",
+          "publishedAt": "2026-09-02T12:00:59Z",
+          "prerelease": false,
+          "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/tag/v0.1.20",
+          "notes": "",
+          "assets": [
+            {
+              "name": "Gear.Cadre_0.1.20_aarch64.dmg",
+              "os": "mac",
+              "label": "macOS · Apple Silicon",
+              "format": "DMG installer",
+              "primary": true,
+              "size": 18866746,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.1.20/Gear.Cadre_0.1.20_aarch64.dmg"
+            },
+            {
+              "name": "Gear.Cadre_0.1.20_amd64.AppImage",
+              "os": "linux",
+              "label": "Linux · x64",
+              "format": "AppImage",
+              "primary": true,
+              "size": 95537656,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.1.20/Gear.Cadre_0.1.20_amd64.AppImage"
+            },
+            {
+              "name": "Gear.Cadre_0.1.20_x64-setup.exe",
+              "os": "windows",
+              "label": "Windows · x64",
+              "format": "EXE installer",
+              "primary": true,
+              "size": 14605212,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.1.20/Gear.Cadre_0.1.20_x64-setup.exe"
+            }
+          ]
+        },
+        {
+          "tag": "v0.1.19",
+          "version": "0.1.19",
+          "publishedAt": "2026-09-01T15:51:51Z",
+          "prerelease": false,
+          "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/tag/v0.1.19",
+          "notes": "",
+          "assets": [
+            {
+              "name": "Gear.Cadre_0.1.19_aarch64.dmg",
+              "os": "mac",
+              "label": "macOS · Apple Silicon",
+              "format": "DMG installer",
+              "primary": true,
+              "size": 18834167,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.1.19/Gear.Cadre_0.1.19_aarch64.dmg"
+            },
+            {
+              "name": "Gear.Cadre_0.1.19_amd64.AppImage",
+              "os": "linux",
+              "label": "Linux · x64",
+              "format": "AppImage",
+              "primary": true,
+              "size": 95521272,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.1.19/Gear.Cadre_0.1.19_amd64.AppImage"
+            },
+            {
+              "name": "Gear.Cadre_0.1.19_x64-setup.exe",
+              "os": "windows",
+              "label": "Windows · x64",
+              "format": "EXE installer",
+              "primary": true,
+              "size": 14568880,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.1.19/Gear.Cadre_0.1.19_x64-setup.exe"
+            }
+          ]
+        },
+        {
+          "tag": "v0.1.18",
+          "version": "0.1.18",
+          "publishedAt": "2026-09-01T13:59:01Z",
+          "prerelease": false,
+          "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/tag/v0.1.18",
+          "notes": "",
+          "assets": [
+            {
+              "name": "Gear.Cadre_0.1.18_aarch64.dmg",
+              "os": "mac",
+              "label": "macOS · Apple Silicon",
+              "format": "DMG installer",
+              "primary": true,
+              "size": 18765972,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.1.18/Gear.Cadre_0.1.18_aarch64.dmg"
+            },
+            {
+              "name": "Gear.Cadre_0.1.18_amd64.AppImage",
+              "os": "linux",
+              "label": "Linux · x64",
+              "format": "AppImage",
+              "primary": true,
+              "size": 95472120,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.1.18/Gear.Cadre_0.1.18_amd64.AppImage"
+            },
+            {
+              "name": "Gear.Cadre_0.1.18_x64-setup.exe",
+              "os": "windows",
+              "label": "Windows · x64",
+              "format": "EXE installer",
+              "primary": true,
+              "size": 14519432,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.1.18/Gear.Cadre_0.1.18_x64-setup.exe"
+            }
+          ]
+        },
+        {
+          "tag": "v0.1.17",
+          "version": "0.1.17",
+          "publishedAt": "2026-09-01T13:14:40Z",
+          "prerelease": false,
+          "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/tag/v0.1.17",
+          "notes": "",
+          "assets": [
+            {
+              "name": "Gear.Cadre_0.1.17_aarch64.dmg",
+              "os": "mac",
+              "label": "macOS · Apple Silicon",
+              "format": "DMG installer",
+              "primary": true,
+              "size": 18727714,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.1.17/Gear.Cadre_0.1.17_aarch64.dmg"
+            },
+            {
+              "name": "Gear.Cadre_0.1.17_amd64.AppImage",
+              "os": "linux",
+              "label": "Linux · x64",
+              "format": "AppImage",
+              "primary": true,
+              "size": 95418872,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.1.17/Gear.Cadre_0.1.17_amd64.AppImage"
+            },
+            {
+              "name": "Gear.Cadre_0.1.17_x64-setup.exe",
+              "os": "windows",
+              "label": "Windows · x64",
+              "format": "EXE installer",
+              "primary": true,
+              "size": 14497431,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.1.17/Gear.Cadre_0.1.17_x64-setup.exe"
+            }
+          ]
+        },
+        {
+          "tag": "v0.1.16",
+          "version": "0.1.16",
+          "publishedAt": "2026-09-01T09:03:49Z",
+          "prerelease": false,
+          "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/tag/v0.1.16",
+          "notes": "",
+          "assets": [
+            {
+              "name": "Gear.Cadre_0.1.16_aarch64.dmg",
+              "os": "mac",
+              "label": "macOS · Apple Silicon",
+              "format": "DMG installer",
+              "primary": true,
+              "size": 18735088,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.1.16/Gear.Cadre_0.1.16_aarch64.dmg"
+            },
+            {
+              "name": "Gear.Cadre_0.1.16_amd64.AppImage",
+              "os": "linux",
+              "label": "Linux · x64",
+              "format": "AppImage",
+              "primary": true,
+              "size": 95418872,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.1.16/Gear.Cadre_0.1.16_amd64.AppImage"
+            },
+            {
+              "name": "Gear.Cadre_0.1.16_x64-setup.exe",
+              "os": "windows",
+              "label": "Windows · x64",
+              "format": "EXE installer",
+              "primary": true,
+              "size": 14497561,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.1.16/Gear.Cadre_0.1.16_x64-setup.exe"
+            }
+          ]
+        },
+        {
+          "tag": "v0.1.15",
+          "version": "0.1.15",
+          "publishedAt": "2026-09-01T04:45:09Z",
+          "prerelease": false,
+          "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/tag/v0.1.15",
+          "notes": "",
+          "assets": [
+            {
+              "name": "Gear.Cadre_0.1.15_aarch64.dmg",
+              "os": "mac",
+              "label": "macOS · Apple Silicon",
+              "format": "DMG installer",
+              "primary": true,
+              "size": 18728390,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.1.15/Gear.Cadre_0.1.15_aarch64.dmg"
+            },
+            {
+              "name": "Gear.Cadre_0.1.15_amd64.AppImage",
+              "os": "linux",
+              "label": "Linux · x64",
+              "format": "AppImage",
+              "primary": true,
+              "size": 95422968,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.1.15/Gear.Cadre_0.1.15_amd64.AppImage"
+            },
+            {
+              "name": "Gear.Cadre_0.1.15_x64-setup.exe",
+              "os": "windows",
+              "label": "Windows · x64",
+              "format": "EXE installer",
+              "primary": true,
+              "size": 14489212,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.1.15/Gear.Cadre_0.1.15_x64-setup.exe"
+            }
+          ]
+        },
+        {
+          "tag": "v0.1.14",
+          "version": "0.1.14",
+          "publishedAt": "2026-09-01T04:08:38Z",
+          "prerelease": false,
+          "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/tag/v0.1.14",
+          "notes": "",
+          "assets": [
+            {
+              "name": "Gear.Cadre_0.1.14_aarch64.dmg",
+              "os": "mac",
+              "label": "macOS · Apple Silicon",
+              "format": "DMG installer",
+              "primary": true,
+              "size": 18728047,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.1.14/Gear.Cadre_0.1.14_aarch64.dmg"
+            },
+            {
+              "name": "Gear.Cadre_0.1.14_amd64.AppImage",
+              "os": "linux",
+              "label": "Linux · x64",
+              "format": "AppImage",
+              "primary": true,
+              "size": 95410680,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.1.14/Gear.Cadre_0.1.14_amd64.AppImage"
+            },
+            {
+              "name": "Gear.Cadre_0.1.14_x64-setup.exe",
+              "os": "windows",
+              "label": "Windows · x64",
+              "format": "EXE installer",
+              "primary": true,
+              "size": 14492920,
+              "url": "https://github.com/AlayaGear/gear-cadre-releases/releases/download/v0.1.14/Gear.Cadre_0.1.14_x64-setup.exe"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
