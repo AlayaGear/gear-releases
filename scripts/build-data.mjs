@@ -37,6 +37,8 @@ async function notesFor(release, product) {
 function cleanNotes(body, product) {
   let notes = (body || '').replace(/\r\n/g, '\n');
   for (const re of product.notesStrip) notes = notes.replace(new RegExp(re), '');
+  // Never show the team's pull requests: drop GitHub's merge prefixes and its bare merge lines.
+  notes = notes.replace(/^([-*] +)Merge pull request #\d+: /gm, '$1').replace(/^[-*] +Merge pull request #\d+ from \S+\n?/gm, '');
   notes = notes.trim();
   if (product.boilerplate.some((re) => new RegExp(re).test(notes))) return '';
   return notes;

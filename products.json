@@ -29,7 +29,7 @@
         }
       ],
       "notesStrip": [
-        "\\n---\\n(由 Mac 自动打包|Built on a Mac from)[\\s\\S]*$"
+        "\\n---\\n(由 Mac 自动打包|Built on a Mac from|If macOS blocks)[\\s\\S]*$"
       ],
       "boilerplate": [],
       "skipTags": [
