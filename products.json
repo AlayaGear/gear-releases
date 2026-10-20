@@ -32,7 +32,12 @@
         "\\n---\\n(由 Mac 自动打包|Built on a Mac from)[\\s\\S]*$"
       ],
       "boilerplate": [],
-      "skipTags": [],
+      "skipTags": [
+        "v0.1.9",
+        "v0.1.10",
+        "v0.2.0",
+        "v0.2.1"
+      ],
       "install": [
         "Open the DMG and drag Gear Zero Desktop into Applications.",
         "If macOS blocks the first launch: System Settings → Privacy & Security → Open Anyway.",
