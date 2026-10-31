@@ -12,7 +12,7 @@
         "macOS (Apple Silicon)"
       ],
       "update": "Updates itself in the app",
-      "signing": "Not notarized by Apple",
+      "signing": "Signed with a Developer ID and notarized by Apple",
       "assets": [
         {
           "pattern": "-arm64\\.dmg$",
@@ -40,7 +40,6 @@
       ],
       "install": [
         "Open the DMG and drag Gear Zero Desktop into Applications.",
-        "If macOS blocks the first launch: System Settings → Privacy & Security → Open Anyway.",
         "After that, Gear Zero Desktop keeps itself up to date."
       ]
     },
