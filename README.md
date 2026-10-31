@@ -9,7 +9,7 @@ One download page and changelog for every Alaya Lab desktop app (Gear Zero Deskt
 | **Gear Zero Desktop** | Create and share games: the playful side of the Gear line, on your Mac. | macOS (Apple Silicon) | [Latest](https://github.com/AlayaGear/gear-zero-desktop-releases/releases/latest) |
 | **Gear Cadre** | The AI game studio for your desktop. Describe a game, play it, refine it by talking; exports Godot projects. | macOS (Apple Silicon), Windows x64, Linux x64 | [Latest](https://github.com/AlayaGear/gear-cadre-releases/releases/latest) |
 
-Both apps update themselves once installed. Neither is code-signed yet, so the first launch shows a warning:
+Both apps update themselves once installed. Gear Zero Desktop is signed with a Developer ID and notarized by Apple since 0.2.73, so macOS no longer blocks its first launch. Gear Cadre isn't code-signed yet, so its first launch shows a warning:
 
 - macOS: System Settings → Privacy & Security → Open Anyway
 - Windows: on the SmartScreen prompt, click More info → Run anyway
